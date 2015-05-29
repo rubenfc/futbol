@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.ArrayList;
 /**
  * Write a description of class Equipo here.
@@ -32,39 +33,63 @@ public class Equipo
         return acum / jugadores.size();
     }
 
-    public ArrayList<Jugador> equipoTitular(){
+//     public ArrayList<Jugador> equipoTitular(){
+//         ArrayList<Jugador> nuevoJ = new ArrayList<>();
+//         for(int i = 0; i < jugadores.size(); i++){
+//             nuevoJ.add(jugadores.get(i));
+//         }
+//         ArrayList<Jugador> mejores = new ArrayList<>();
+//         mejores.add(jugadores.get(0));
+//         mejores.add(jugadores.get(1));
+//         nuevoJ.remove(0);
+//         nuevoJ.remove(1);
+//         
+//         int cont = 0;
+//         int indice = 0;
+//         while(cont < 9){
+//             int contador = 0;
+//             Jugador mejJugador = jugadores.get(0);
+//             while(contador < nuevoJ.size()){
+//                     if(nuevoJ.get(contador).getEstadoForma() >= mejJugador.getEstadoForma()){
+//                             mejJugador = nuevoJ.get(contador);
+//                             indice = contador;
+//                         }
+//                 
+//                 contador++;
+//             }
+//             nuevoJ.remove(indice);
+//             mejores.add(mejJugador);
+//             cont++;
+//           
+//         }
+//         return mejores;
+//     }
+    
+    public ArrayList<Jugador> once(){
+        Random rnd = new Random();
+        ArrayList<Jugador> titulares = new ArrayList<>();
         ArrayList<Jugador> nuevoJ = new ArrayList<>();
         for(int i = 0; i < jugadores.size(); i++){
             nuevoJ.add(jugadores.get(i));
         }
-        ArrayList<Jugador> mejores = new ArrayList<>();
-        mejores.add(jugadores.get(0));
-        mejores.add(jugadores.get(1));
-        
+        titulares.add(nuevoJ.get(0));
+        titulares.add(nuevoJ.get(1));
+        nuevoJ.remove(0);
+        nuevoJ.remove(1);
         int cont = 0;
-        int indice = 2;
         while(cont < 9){
-            int contador = 3;
-            Jugador mejJugador = jugadores.get(2);
-            while(contador < nuevoJ.size()){
-                    if(nuevoJ.get(contador).getEstadoForma() >= mejJugador.getEstadoForma()){
-                            mejJugador = nuevoJ.get(contador);
-                            indice = contador;
-                        }
-                
-                contador++;
-            }
+            int tamanio = nuevoJ.size();
+            int indice = rnd.nextInt(tamanio);
+            titulares.add(nuevoJ.get(indice));
             nuevoJ.remove(indice);
-            mejores.add(mejJugador);
             cont++;
-          
         }
-        return mejores;
+        return titulares;
     }
 
     public void infoTitulares(){
         System.out.println(nombre);
-        ArrayList<Jugador> titulares = equipoTitular();
+        ArrayList<Jugador> titulares = once();
         int acum = 0;
         for(int i = 0; i < titulares.size(); i++){
             System.out.println(titulares.get(i));
