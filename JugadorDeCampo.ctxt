@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=dorsal
+comment0.target=JugadorDeCampo(int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ JugadorDeCampo\r\n
+comment1.params=
+comment1.target=int\ getPase()
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment2.params=
+comment2.target=int\ getRemate()
+comment2.text=\r\n\ \r\n
+comment3.params=
+comment3.target=int\ getRegate()
+comment4.params=
+comment4.target=int\ mediaJugador()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=
+comment6.target=java.lang.String\ toStringC()
+numComments=7
